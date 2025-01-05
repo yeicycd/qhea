@@ -1,3 +1,49 @@
-<html>
-  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q HACES EN AGOSTO??</title>
+    <style>
+        /* Hacer que el video ocupe toda la pantalla */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease; /* Animación para el cambio de escala */
+        }
+        video.clicked {
+            transform: scale(1.2); /* Aumentar la escala del video */
+        }
+    </style>
+</head>
+<body>
+    <video id="video" autoplay loop muted>
+        <source src="assets/qhea.mp4" type="video/mp4">
+        Tu navegador no soporta el formato de video.
+    </video>
+
+    <script>
+        const video = document.getElementById('video');
+
+        video.addEventListener('click', function() {
+            // Aumentar la escala del video
+            video.classList.toggle('clicked');
+
+            // Redirigir a una URL después de un pequeño retraso para ver el efecto
+            setTimeout(function() {
+                window.location.href = 'https://www.youtube.com/watch?v=INqolGxXZ1E'; // Sustituye por la URL a la que deseas redirigir
+            }, 300); // Espera 300ms para que se vea el cambio de escala antes de redirigir
+        });
+    </script>
+</body>
 </html>
